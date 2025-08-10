@@ -23,10 +23,8 @@ It demonstrates the fundamentals of **gradient descent optimization** and **cost
 ## ⚙️ How It Works
 
 1. **Cost Function**
-   - Implemented as `CostFunctionImpl`, which uses **Mean Squared Error (MSE)**:
-     \{
-     J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (y_{\text{pred}} - y)^2
-     \}
+   - Implemented as `CostFunctionImpl`, which uses **Mean Squared Error (MSE)**:  
+     ![equation](https://latex.codecogs.com/png.image?\dpi{120}J(w,b)=\frac{1}{2m}\sum_{i=1}^m(y_{\text{pred}}-y)^2)
    
 2. **Optimizer**
    - `GradientDecent` (Gradient Descent) calculates partial derivatives of the cost function with respect to **w** and **b**.
@@ -37,54 +35,38 @@ It demonstrates the fundamentals of **gradient descent optimization** and **cost
 
 4. **Training**
    - Starts with initial weights (`w`) and bias (`b`) set to zero.
-   - Iteratively updates parameters using the gradient descent update rule:
-     \[
-     w := w - \alpha \cdot \frac{\partial J}{\partial w}
-     \]
-     \[
-     b := b - \alpha \cdot \frac{\partial J}{\partial b}
-     \]
+   - Iteratively updates parameters using the gradient descent update rule:  
+     ![equation](https://latex.codecogs.com/png.image?\dpi{120}w:=w-\alpha\cdot\frac{\partial{J}}{\partial{w}})  
+     ![equation](https://latex.codecogs.com/png.image?\dpi{120}b:=b-\alpha\cdot\frac{\partial{J}}{\partial{b}})
    - The learning rate (**α**) controls the step size.
 
 ---
 
 ## 📐 Mathematical Derivation
 
-Given:
-\[
-y_{\text{pred}} = w x + b
-\]
+Given:  
+![equation](https://latex.codecogs.com/png.image?\dpi{120}y_{\text{pred}}=wx+b)
 
-**Cost Function (MSE):**
-\[
-J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} \left( (w x_i + b) - y_i \right)^2
-\]
+**Cost Function (MSE):**  
+![equation](https://latex.codecogs.com/png.image?\dpi{120}J(w,b)=\frac{1}{2m}\sum_{i=1}^m(wx_i+b-y_i)^2)
 
 ---
 
-**Partial derivative with respect to \( w \):**
-\[
-\frac{\partial J}{\partial w} = \frac{1}{m} \sum_{i=1}^{m} x_i \cdot \left( (w x_i + b) - y_i \right)
-\]
+**Partial derivative with respect to w:**  
+![equation](https://latex.codecogs.com/png.image?\dpi{120}\frac{\partial{J}}{\partial{w}}=\frac{1}{m}\sum_{i=1}^m{x_i}\cdot(wx_i+b-y_i))
 
-**Partial derivative with respect to \( b \):**
-\[
-\frac{\partial J}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} \left( (w x_i + b) - y_i \right)
-\]
+**Partial derivative with respect to b:**  
+![equation](https://latex.codecogs.com/png.image?\dpi{120}\frac{\partial{J}}{\partial{b}}=\frac{1}{m}\sum_{i=1}^m(wx_i+b-y_i))
 
 ---
 
-**Gradient Descent Update Rules:**
-\[
-w := w - \alpha \cdot \frac{\partial J}{\partial w}
-\]
-\[
-b := b - \alpha \cdot \frac{\partial J}{\partial b}
-\]
+**Gradient Descent Update Rules:**  
+![equation](https://latex.codecogs.com/png.image?\dpi{120}w:=w-\alpha\cdot\frac{\partial{J}}{\partial{w}})  
+![equation](https://latex.codecogs.com/png.image?\dpi{120}b:=b-\alpha\cdot\frac{\partial{J}}{\partial{b}})
 
 Where:
-- \( m \) = number of training examples
-- \( \alpha \) = learning rate
+- *m* = number of training examples  
+- *α* = learning rate
 
 ---
 
